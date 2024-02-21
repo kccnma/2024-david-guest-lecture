@@ -34,7 +34,7 @@ class Demo {
 // The arguments passed to the ''()' will be available in the
 // constructor. In this instance we'll pass a string that will
 // be the 'demoName' parameter.
-const demo1 = new Demo("Chris");
+const demo1 = new Demo("Peter");
 
 // You can access the methods using dot notation
 demo1.greetPerson(); // Output 'Hello Chris'
@@ -63,7 +63,7 @@ class Employee extends Person {
 // Even though the 'Employee' class doesn't have a
 // 'logJob' method on it, it inherits it from
 // the 'Person' class.
-const teacher = new Employee("Teacher");
+const teacher = new Employee("Developer");
 teacher.logJob(); // Output: Their job is: Teacher
 
 // You can also write this as a one-liner if needed
@@ -80,14 +80,23 @@ new Employee("Farmer").logJob(); // Output: Their job is: Farmer
  *    returns the species property.
  * */
 
+class Animal {
+  constructor(species) {
+    this.species = species;
+  };
+  getSpecies() {
+    return this.species;
+  };
+};
+
 // Un-comment this test when you are ready to check
 // your work
-// const pig = new Animal("pig");
-// assert(
-//   pig.getSpecies() === "pig",
-//   "Exercise 1 Failed: The 'getSpecies' method doesn't log the correct value of 'pig'"
-// );
-// console.log("Exercise 1 Passed!");
+const pig = new Animal("pig");
+assert(
+  pig.getSpecies() === "pig",
+  "Exercise 1 Failed: The 'getSpecies' method doesn't log the correct value of 'pig'"
+);
+console.log("Exercise 1 Passed!");
 
 /* 02.
  *
@@ -100,14 +109,34 @@ new Employee("Farmer").logJob(); // Output: Their job is: Farmer
  * 6. Create a method called 'getTotalBoards' that returns the 'numberOfBoards'
  * */
 
+class Sports {
+  constructor(type) {
+    this.type = type;
+  };
+  getType() {
+    return this.type;
+  };
+};
+
+class Surfing extends Sports {
+  constructor(numberOfBoards) {
+    super();
+    this.type = "Surfing";
+    this.numberOfBoards = numberOfBoards;
+  }; 
+  getTotalBoards() {
+    return this.numberOfBoards;
+  };
+}
+
 // Un-comment this test when you are ready to check
-// const surfing = new Surfing(40);
-// assert(
-//   surfing.getType() === "surfing",
-//   `Exercise 2 Failed: Expected 'getType' method to return 'surfing'`
-// );
-// assert(
-//   surfing.getTotalBoards() === 40,
-//   `Exercise 2 Failed: Expected 'getTotalBoards' method to return 40`
-// );
-// console.log("Exercise 2 Passed!");
+const surfing = new Surfing(40);
+assert(
+  surfing.getType() === "Surfing",
+  `Exercise 2 Failed: Expected 'getType' method to return 'surfing'`
+);
+assert(
+  surfing.getTotalBoards() === 40,
+  `Exercise 2 Failed: Expected 'getTotalBoards' method to return 40`
+);
+console.log("Exercise 2 Passed!");
